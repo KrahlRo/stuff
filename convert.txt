@@ -1,0 +1,23 @@
+String str = "example"
+
+--> Umwandlung von Plain Text zu Dezimal:
+byte[] decArray = str.getBytes();
+--> Dekodierung:
+String decoded = new String(decArray);
+
+--> Dezimal zu Base64:
+String base64= Base64.getEncoder().encodeToString(decArray);
+ Dekodierung:
+byte[] decoded = Base64.getDecoder().decode(base64);
+
+--> Dezimal zu Binär:
+String bin = Integer.toBinaryString(decArray[index]);
+(mit Vorranstellung nullen:
+ String bin2 = String.format("%8s", decArray[index]).replace(' ', '0');))
+Dekodierung:
+int decode = Integer.parseInt(bin, 2);
+
+--> Dezimal zu Hex:
+String hex = Integer.toHexString(decArray[index]);
+Dekodierung:
+ int decode = Integer.parseInt(hex, 16);
